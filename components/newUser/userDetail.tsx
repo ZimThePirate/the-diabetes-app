@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, ScrollView, KeyboardAvoidingView } from 'react-native';
+import * as SecureStore from 'expo-secure-store';
 
 interface UserDetailProps {
     onNext: () => void;
@@ -40,9 +41,24 @@ const UserDetail = ({ onNext, onBack }: UserDetailProps) => {
 
     const age = calculateAge(dateOfBirth);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (firstName && lastName && weight && height && dateOfBirth) {
-            onNext();
+            const userData = {
+                firstName,
+                lastName,
+                weight,
+                height,
+                dateOfBirth,
+                age: calculateAge(dateOfBirth)
+            };
+            
+            try {
+                await SecureStore.setItemAsync('userData', JSON.stringify(userData));
+                onNext();
+            } catch (error) {
+                console.error('Error saving user data:', error);
+                onNext();
+            }
         }
     };
 
