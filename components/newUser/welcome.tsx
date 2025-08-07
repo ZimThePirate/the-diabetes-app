@@ -1,10 +1,14 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 
-const Welcome = ({ onNext }: { onNext: () => void }) => {
+interface WelcomeProps {
+    onNext: () => void;
+}
+
+const Welcome = ({ onNext }: WelcomeProps) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.Text}>Welcome</Text>
+            <Text style={styles.title}>Welcome</Text>
             <Pressable
                 style={({ pressed }) => [
                     styles.button,
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    Text: {
+    title: {
         fontSize: 40,
         fontWeight: 'bold',
         marginBottom: 40,

@@ -24,7 +24,9 @@ const History = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        paddingHorizontal: 20,
+        paddingTop: 40,
     },
     content: {
         flex: 1,

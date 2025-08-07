@@ -45,7 +45,7 @@ const ClickReport = () => {
         <View style={styles.container}>
             <Pressable
                 style={({ pressed }) => [
-                    styles.squareButton,
+                    styles.clickReportButton,
                     pressed && styles.buttonPressed,
                 ]}
                 onPress={handleOpenCamera}
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 32,
     },
-    squareButton: {
+    clickReportButton: {
         width: 48,
         height: 48,
         backgroundColor: '#111',

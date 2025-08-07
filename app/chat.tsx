@@ -24,9 +24,11 @@ export default function Chat() {
             />
             <Title />
             <View style={styles.centerContent}>
-                <Text style={styles.centerMessage}>
-                    Chat with the Diabetes Expert
-                </Text>
+                <View style={styles.card}>
+                    <Text style={styles.message}>
+                        Chat with the Diabetes Expert!
+                    </Text>
+                </View>
             </View>
 
             <View style={styles.inputContainer}>
@@ -64,12 +66,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 24,
     },
-    centerMessage: {
-        fontSize: 24,
-        fontWeight: '600',
-        color: '#374151',
+    card: {
+        backgroundColor: '#fff',
+        borderRadius: 8,
+        padding: 24,
+        borderWidth: 1,
+        borderColor: '#e0e0e0',
+        minWidth: '80%',
+        alignItems: 'center',
+    },
+    message: {
+        fontSize: 16,
+        color: '#666',
         textAlign: 'center',
-        lineHeight: 32,
+        lineHeight: 24,
     },
     inputContainer: {
         flexDirection: 'row',

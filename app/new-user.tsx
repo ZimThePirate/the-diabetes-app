@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 
@@ -29,10 +29,25 @@ export default function NewUser() {
         }
     };
 
+    const handleBackScreen = () => {
+        setScreen(0);
+    };
+
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.container}>
             {screen === 0 && <Welcome onNext={handleNextScreen} />}
-            {screen === 1 && <UserDetail onNext={handleNextScreen} onBack={() => setScreen(0)} />}
+            {screen === 1 && (
+                <UserDetail 
+                    onNext={handleNextScreen} 
+                    onBack={handleBackScreen} 
+                />
+            )}
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+});

@@ -14,7 +14,7 @@ const ChatButton = () => {
         <View style={styles.container}>
             <Pressable
                 style={({ pressed }) => [
-                    styles.ChatButton,
+                    styles.chatButton,
                     pressed && styles.buttonPressed,
                 ]}
                 onPress={handleChatPress}
@@ -23,14 +23,14 @@ const ChatButton = () => {
             </Pressable>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         marginTop: 32,
     },
-    ChatButton: {
+    chatButton: {
         width: 48,
         height: 48,
         backgroundColor: '#111',
