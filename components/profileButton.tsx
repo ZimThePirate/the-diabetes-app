@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
         marginTop: 32,
     },
     profileButton: {
-        width: 64,
-        height: 64,
+        width: 48,
+        height: 48,
         backgroundColor: '#111',
         borderRadius: 8,
         alignItems: 'center',
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ProfileButton
+export default ProfileButton;

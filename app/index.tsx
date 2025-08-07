@@ -6,6 +6,7 @@ import ClickReport from '../components/clickReport';
 import Upload from '../components/upload';
 import ChatButton from '../components/chatButton';
 import ProfileButton from '../components/profileButton';
+import HistoryButton from '../components/historyButton';
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
                 </View>
                 <View style={styles.horizontalContainer}>
                     <ProfileButton />
+                    <HistoryButton/>
                 </View>
             </View>
         </View>

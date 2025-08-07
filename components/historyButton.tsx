@@ -3,34 +3,34 @@ import { View, Pressable, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
-const ChatButton = () => {
+const HistoryButton = () => {
     const router = useRouter();
 
-    const handleChatPress = () => {
-        router.push('/chat');
+    const handleHistoryPress = () => {
+        router.push('/history');
     };
 
     return (
         <View style={styles.container}>
             <Pressable
                 style={({ pressed }) => [
-                    styles.ChatButton,
+                    styles.historyButton,
                     pressed && styles.buttonPressed,
                 ]}
-                onPress={handleChatPress}
+                onPress={handleHistoryPress}
             >
-                <Ionicons name="chatbubble" size={32} color="#fff" />
+                <Ionicons name="time-outline" size={32} color="#fff" />
             </Pressable>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         marginTop: 32,
     },
-    ChatButton: {
+    historyButton: {
         width: 48,
         height: 48,
         backgroundColor: '#111',
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ChatButton;
+export default HistoryButton;
