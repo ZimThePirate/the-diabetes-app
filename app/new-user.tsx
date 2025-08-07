@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 
 import Welcome from '../components/newUser/welcome';
+import UserDetail from '../components/newUser/userDetail';
 
 export default function NewUser() {
     const [screen, setScreen] = useState(0);
@@ -21,7 +22,7 @@ export default function NewUser() {
 
     const handleNextScreen = () => {
         const nextScreen = screen + 1;
-        if (nextScreen < 1) {
+        if (nextScreen <= 1) {
             setScreen(nextScreen);
         } else {
             handleFinishOnboarding();
@@ -31,6 +32,7 @@ export default function NewUser() {
     return (
         <View style={{ flex: 1 }}>
             {screen === 0 && <Welcome onNext={handleNextScreen} />}
+            {screen === 1 && <UserDetail onNext={handleNextScreen} onBack={() => setScreen(0)} />}
         </View>
     );
 }

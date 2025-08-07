@@ -38,7 +38,7 @@ export default function RootLayout() {
         if (loaded) {
             checkFirstTimeInstall();
         }
-    }, [loaded]);
+    }, [loaded, segments]);
 
     useEffect(() => {
         if (!loaded || isFirstTime === null) return;
