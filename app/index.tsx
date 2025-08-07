@@ -1,9 +1,10 @@
 import { Stack } from 'expo-router';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
-import Upload from '../components/upload';
+import ChatButton from '../components/chatButton';
 import ClickReport from '../components/clickReport';
-
+import Upload from '../components/upload';
+import Title from '../components/title';
 
 export default function Home() {
     return (
@@ -13,11 +14,13 @@ export default function Home() {
                     headerShown: false,
                 }}
             />
-            <Text style={styles.title}>The Diabetes App</Text>
-
+            <Title />
             <View style={styles.componentsContainer}>
                 <Upload />
-                <ClickReport />
+                <View style={styles.horizontalContainer}>
+                    <ClickReport />
+                    <ChatButton />
+                </View>
             </View>
         </View>
     );
@@ -30,14 +33,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#fff',
     },
-    title: {
-        fontSize: 42,
-        fontWeight: '900',
-        color: '#000000ff',
-        textAlign: 'center',
-        letterSpacing: -0.5,
-    },
     componentsContainer: {
         alignItems: 'center',
+    },
+    horizontalContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
     },
 });

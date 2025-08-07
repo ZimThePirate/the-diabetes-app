@@ -3,7 +3,7 @@ import { View, Pressable, StyleSheet, Modal } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 
-export default function ClickReport() {
+const ClickReport = () => {
     const [cameraVisible, setCameraVisible] = useState(false);
     const [facing, setFacing] = useState<CameraType>('back');
     const [permission, requestPermission] = useCameraPermissions();
@@ -96,7 +96,7 @@ export default function ClickReport() {
             </Modal>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -180,3 +180,5 @@ const styles = StyleSheet.create({
         borderRadius: 30,
     },
 });
+
+export default ClickReport;

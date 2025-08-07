@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 
-export default function Upload() {
+const Upload = () => {
     const handleUpload = async () => {
         const result = await DocumentPicker.getDocumentAsync({ type: '*/*' });
         if (!result.canceled) {
@@ -17,7 +17,7 @@ export default function Upload() {
             </TouchableOpacity>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -41,3 +41,5 @@ const styles = StyleSheet.create({
         letterSpacing: 0.5,
     },
 });
+
+export default Upload;
